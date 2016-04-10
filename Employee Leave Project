@@ -25,6 +25,41 @@ public:
     void update_leave();   //part of edit() function. It updates only leave
     void visitweb();
 };
+int main()
+{
+    employee emp, e;
+    char x;
+    static int n = 0; //to count the number of invalid inputs
+    static int y = 0;  //to call arraymenu() only once
+    if( y == 0)
+    {
+         x = emp.arraymenu();
+         y++ ;   //after incrementing y by 1 arraymenu() is not called
+    }  else
+    x = emp.menu();
+        switch(x) //get the character from menu() function and according to that case option is selected
+        {
+            case 'c':  emp.build();   break;
+            case 'l':  emp.list();    break;
+            case 'a':  emp.insert();  break;
+            case 'd':  emp.deletes(); break;
+            case 's':  emp.search();  break;
+            case 'e':  emp.edit();    break;
+            case 'v':  emp.visitweb();  break;
+            case 'q':  exit(0);       break;
+            //if(emp.menu()!='b'||'l'||'i'||'d'||'s'||'q');
+              //  cout << "Invalid choice !";
+            default :  n++ ;
+                    if(n  ==  3)
+                      {
+                          cout << "\n\n\t\t\aSorry, you have reached the limit !\n\n";
+                          exit(0);
+                      }
+                    cout << "\n\t\t\t\aInvalid choice !";
+                    cout << "\n\n\t\t\t  Try Again"; Sleep(1500);
+                      main();
+        }
+}
 char employee::menu()
 {
     system("cls");
@@ -91,41 +126,6 @@ char employee::arraymenu()
     return getch();
   /*  cin  >>  user_option;
     return user_option;*/
-}
-int main()
-{
-    employee emp, e;
-    char x;
-    static int n = 0; //to count the number of invalid inputs
-    static int y = 0;  //to call arraymenu() only once
-    if( y == 0)
-    {
-         x = emp.arraymenu();
-         y++ ;   //after incrementing y by 1 arraymenu() is not called
-    }  else
-    x = emp.menu();
-        switch(x) //get the character from menu() function and according to that case option is selected
-        {
-            case 'c':  emp.build();   break;
-            case 'l':  emp.list();    break;
-            case 'a':  emp.insert();  break;
-            case 'd':  emp.deletes(); break;
-            case 's':  emp.search();  break;
-            case 'e':  emp.edit();    break;
-            case 'v':  emp.visitweb();  break;
-            case 'q':  exit(0);       break;
-            //if(emp.menu()!='b'||'l'||'i'||'d'||'s'||'q');
-              //  cout << "Invalid choice !";
-            default :  n++ ;
-                    if(n  ==  3)
-                      {
-                          cout << "\n\n\t\t\aSorry, you have reached the limit !\n\n";
-                          exit(0);
-                      }
-                    cout << "\n\t\t\t\aInvalid choice !";
-                    cout << "\n\n\t\t\t  Try Again"; Sleep(1500);
-                      main();
-        }
 }
 void employee::build()
 {
