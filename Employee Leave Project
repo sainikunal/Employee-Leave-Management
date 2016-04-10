@@ -1,7 +1,7 @@
-#include <iostream>
-#include <iomanip>   //for manipulators like setw, setfill
-#include <windows.h>  //for system commands like cls, remove
-#include <conio.h>
+#include<iostream>
+#include<iomanip>   //for manipulators like setw, setfill
+#include<windows.h>  //for system commans like "cls"
+#include<conio.h>
 #include <fstream>   //to perform file operations
 using namespace std;
 class employee
@@ -526,23 +526,20 @@ void employee :: visitweb()
     system("cls");
     char cha;
     char text[]  = "\n\nProceeding with yes will take you to that website which contains the source code of this project";
-    char text1[] = "\n\nYou have to login with your Google account to view the Source Code";
     char text2[] = "\n\nDo you want to proceed (y/n) ? ";
     char *ptr ;
     ptr = new char [60];
     ptr  = &text[0];
         for (int i = 0; i < sizeof(text); i++)
             {   cout << *(ptr+i);    Sleep(40);  }     delete[] ptr;
-    ptr  = &text1[0];
-        for (int i = 0; i < sizeof(text1); i++)
-            {   cout << *(ptr+i);    Sleep(40);  }     delete[] ptr;
+
     ptr  = &text2[0];
         for (int i = 0; i < sizeof(text2); i++)
             {   cout << *(ptr+i);    Sleep(40);  }     delete[] ptr;
      cin >> cha;
     if(cha  ==  'y' || cha  ==  'Y')
     {
-         system("start chrome.exe http://tinyurl.com/k1506");
+         system("start chrome.exe http://tinyurl.com/improvethis");
          main();
     }
     else main();
