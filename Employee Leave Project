@@ -1,6 +1,6 @@
 #include<iostream>
 #include<iomanip>   //for manipulators like setw, setfill
-#include<windows.h>  //for system commans like "cls"
+#include<windows.h>  //for system commands like "cls"
 #include<conio.h>
 #include <fstream>   //to perform file operations
 using namespace std;
